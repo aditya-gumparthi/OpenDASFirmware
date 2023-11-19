@@ -13,6 +13,7 @@ struct VoltMeterInputConfig {
     uint inp_msel_1;
     uint inp_msel_2;
     uint inp_msel_3;
+    uint in_rel_sel;  // Added new pin
 };
 
 class VoltMeterInputs {

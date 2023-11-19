@@ -10,6 +10,7 @@ VoltMeterInputs::VoltMeterInputs(const VoltMeterInputConfig& config) {
     initPin(config.inp_msel_1);
     initPin(config.inp_msel_2);
     initPin(config.inp_msel_3);
+    initPin(config.in_rel_sel);  // Initialize the new pin
 }
 
 void VoltMeterInputs::initPin(uint pin) {
