@@ -13,15 +13,35 @@ struct VoltMeterInputConfig {
     uint inp_msel_1;
     uint inp_msel_2;
     uint inp_msel_3;
-    uint in_rel_sel;  // Added new pin
+    uint in_rel_sel;  // Relay pin
+};
+
+// Enumerations for input attenuation
+enum InputAttenuation {
+    DIV_1,
+    DIV_5
+};
+
+// Enumerations for input selection
+enum InputSelection {
+    INPUT_VIN,
+    CAL_SHORT,
+    CAL_REF_MIDSCALE,
+    CAL_REF_FULLSCALE
 };
 
 class VoltMeterInputs {
 public:
     VoltMeterInputs(const VoltMeterInputConfig& config);
+    void setInputAttenuation(InputAttenuation attenuation);
+    void setInn(InputSelection selection);
+    void setInp(InputSelection selection);
 
 private:
+    VoltMeterInputConfig config;
     void initPin(uint pin);
+    void clearInnPins();
+    void clearInpPins();
 };
 
 #endif // VOLTMETERINPUTS_HPP
