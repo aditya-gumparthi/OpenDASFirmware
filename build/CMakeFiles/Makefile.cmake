@@ -21,6 +21,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/CMake/share/cmake-3.26/Modules/Compiler/GNU-C.cmake"
   "C:/Program Files/CMake/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake"
   "C:/Program Files/CMake/share/cmake-3.26/Modules/Compiler/GNU.cmake"
+  "C:/Program Files/CMake/share/cmake-3.26/Modules/FetchContent.cmake"
   "C:/Program Files/CMake/share/cmake-3.26/Modules/FindDoxygen.cmake"
   "C:/Program Files/CMake/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake"
   "C:/Program Files/CMake/share/cmake-3.26/Modules/FindPackageMessage.cmake"

@@ -758,6 +758,198 @@
 			"value" : "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware"
 		},
 		{
+			"name" : "CMAKE_INSTALL_BINDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "User executables (bin)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "bin"
+		},
+		{
+			"name" : "CMAKE_INSTALL_DATADIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Read-only architecture-independent data (DATAROOTDIR)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_DATAROOTDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Read-only architecture-independent data root (share)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "share"
+		},
+		{
+			"name" : "CMAKE_INSTALL_DOCDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Documentation root (DATAROOTDIR/doc/PROJECT_NAME)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_INCLUDEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "C header files (include)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "include"
+		},
+		{
+			"name" : "CMAKE_INSTALL_INFODIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Info documentation (DATAROOTDIR/info)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_LIBDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "PATH",
+			"value" : "lib"
+		},
+		{
+			"name" : "CMAKE_INSTALL_LIBEXECDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Program executables (libexec)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "libexec"
+		},
+		{
+			"name" : "CMAKE_INSTALL_LOCALEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Locale-dependent data (DATAROOTDIR/locale)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_LOCALSTATEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Modifiable single-machine data (var)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "var"
+		},
+		{
+			"name" : "CMAKE_INSTALL_MANDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Man documentation (DATAROOTDIR/man)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_OLDINCLUDEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "C header files for non-gcc (/usr/include)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/include"
+		},
+		{
 			"name" : "CMAKE_INSTALL_PREFIX",
 			"properties" : 
 			[
@@ -768,6 +960,70 @@
 			],
 			"type" : "PATH",
 			"value" : "C:/Program Files (x86)/opendas_firm"
+		},
+		{
+			"name" : "CMAKE_INSTALL_RUNSTATEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Run-time variable data (LOCALSTATEDIR/run)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_SBINDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "System admin executables (sbin)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "sbin"
+		},
+		{
+			"name" : "CMAKE_INSTALL_SHAREDSTATEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Modifiable architecture-independent data (com)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "com"
+		},
+		{
+			"name" : "CMAKE_INSTALL_SYSCONFDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Read-only single-machine data (etc)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "etc"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -988,6 +1244,66 @@
 			],
 			"type" : "STATIC",
 			"value" : "opendas_firm"
+		},
+		{
+			"name" : "CMAKE_PROJECT_VERSION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "0.2.0"
+		},
+		{
+			"name" : "CMAKE_PROJECT_VERSION_MAJOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "0"
+		},
+		{
+			"name" : "CMAKE_PROJECT_VERSION_MINOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "2"
+		},
+		{
+			"name" : "CMAKE_PROJECT_VERSION_PATCH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "0"
+		},
+		{
+			"name" : "CMAKE_PROJECT_VERSION_TWEAK",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1314,6 +1630,78 @@
 			"value" : "RP2040"
 		},
 		{
+			"name" : "FETCHCONTENT_BASE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Directory under which to collect all populated content"
+				}
+			],
+			"type" : "PATH",
+			"value" : "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/_deps"
+		},
+		{
+			"name" : "FETCHCONTENT_FULLY_DISCONNECTED",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Disables all attempts to download or update content and assumes source dirs already exist"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
+			"name" : "FETCHCONTENT_QUIET",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Enables QUIET option for all content population"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "ON"
+		},
+		{
+			"name" : "FETCHCONTENT_SOURCE_DIR_EMIO",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "When not empty, overrides where to find pre-populated content for emio"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "FETCHCONTENT_UPDATES_DISCONNECTED",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Enables UPDATE_DISCONNECTED behavior for all content population"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
+			"name" : "FETCHCONTENT_UPDATES_DISCONNECTED_EMIO",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Enables UPDATE_DISCONNECTED behavior just for population of emio"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Python3",
 			"properties" : 
 			[
@@ -1324,6 +1712,22 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "[C:/Program Files/Python311/python.exe][cfound components: Interpreter ][v3.11.3()]"
+		},
+		{
+			"name" : "GIT_EXECUTABLE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Git command line client"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "C:/Program Files/Git/cmd/git.exe"
 		},
 		{
 			"name" : "PICO_BOARD",
@@ -1479,7 +1883,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : " C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs"
+			"value" : " C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs"
 		},
 		{
 			"name" : "PICO_DOXYGEN_PATHS",
@@ -1674,6 +2078,18 @@
 			"value" : ""
 		},
 		{
+			"name" : "_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "CMAKE_INSTALL_PREFIX during last run"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "C:/Program Files (x86)/opendas_firm"
+		},
+		{
 			"name" : "_Python3_Compiler_REASON_FAILURE",
 			"properties" : 
 			[
@@ -1756,6 +2172,74 @@
 			],
 			"type" : "INTERNAL",
 			"value" : ""
+		},
+		{
+			"name" : "emio_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/_deps/emio-build"
+		},
+		{
+			"name" : "emio_INCLUDES_WITH_SYSTEM",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Use SYSTEM modifier for emio's includes, disabling warnings"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "ON"
+		},
+		{
+			"name" : "emio_INSTALL_CMAKEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "CMake package config location relative to the install prefix"
+				}
+			],
+			"type" : "PATH",
+			"value" : "share/emio"
+		},
+		{
+			"name" : "emio_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "emio_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/_deps/emio-src"
 		},
 		{
 			"name" : "opendas_firm_BINARY_DIR",

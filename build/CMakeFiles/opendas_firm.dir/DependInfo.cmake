@@ -176,8 +176,11 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c" "CMakeFiles/opendas_firm.dir/C_/VSARM/PicoSDK/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj" "gcc" "CMakeFiles/opendas_firm.dir/C_/VSARM/PicoSDK/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj.d"
   "C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c" "CMakeFiles/opendas_firm.dir/C_/VSARM/PicoSDK/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj" "gcc" "CMakeFiles/opendas_firm.dir/C_/VSARM/PicoSDK/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj.d"
   "C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c" "CMakeFiles/opendas_firm.dir/C_/VSARM/PicoSDK/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj" "gcc" "CMakeFiles/opendas_firm.dir/C_/VSARM/PicoSDK/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj.d"
+  "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/ADS127L11/ADS127L11.cpp" "CMakeFiles/opendas_firm.dir/ADS127L11/ADS127L11.cpp.obj" "gcc" "CMakeFiles/opendas_firm.dir/ADS127L11/ADS127L11.cpp.obj.d"
+  "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/AFE.cpp" "CMakeFiles/opendas_firm.dir/AFE.cpp.obj" "gcc" "CMakeFiles/opendas_firm.dir/AFE.cpp.obj.d"
   "C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp" "CMakeFiles/opendas_firm.dir/C_/VSARM/PicoSDK/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj" "gcc" "CMakeFiles/opendas_firm.dir/C_/VSARM/PicoSDK/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj.d"
   "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/ShiftRegister595.cpp" "CMakeFiles/opendas_firm.dir/ShiftRegister595.cpp.obj" "gcc" "CMakeFiles/opendas_firm.dir/ShiftRegister595.cpp.obj.d"
+  "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/VoltMeterInputs.cpp" "CMakeFiles/opendas_firm.dir/VoltMeterInputs.cpp.obj" "gcc" "CMakeFiles/opendas_firm.dir/VoltMeterInputs.cpp.obj.d"
   "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/main.cpp" "CMakeFiles/opendas_firm.dir/main.cpp.obj" "gcc" "CMakeFiles/opendas_firm.dir/main.cpp.obj.d"
   )
 

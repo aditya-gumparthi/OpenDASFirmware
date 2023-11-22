@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/_deps/emio-subbuild/CMakeFiles/emio-populate"
+		},
+		{
+			"file" : "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/_deps/emio-subbuild/CMakeFiles/emio-populate.rule"
+		},
+		{
+			"file" : "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/_deps/emio-subbuild/CMakeFiles/emio-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/_deps/emio-subbuild/emio-populate-prefix/src/emio-populate-stamp/emio-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/_deps/emio-subbuild/emio-populate-prefix/src/emio-populate-stamp/emio-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/_deps/emio-subbuild/emio-populate-prefix/src/emio-populate-stamp/emio-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/_deps/emio-subbuild/emio-populate-prefix/src/emio-populate-stamp/emio-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/_deps/emio-subbuild/emio-populate-prefix/src/emio-populate-stamp/emio-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/_deps/emio-subbuild/emio-populate-prefix/src/emio-populate-stamp/emio-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/_deps/emio-subbuild/emio-populate-prefix/src/emio-populate-stamp/emio-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/_deps/emio-subbuild/emio-populate-prefix/src/emio-populate-stamp/emio-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"emio-populate"
+		],
+		"name" : "emio-populate"
+	}
+}

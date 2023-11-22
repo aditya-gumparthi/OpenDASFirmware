@@ -67,4 +67,6 @@ CMakeFiles/opendas_firm.dir/main.cpp.obj: \
  C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
  C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
  C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
- C:/Users/gumpa/PCB\ Design\ Projects/OpenDAS/Firmware/ShiftRegister595.hpp
+ C:/Users/gumpa/PCB\ Design\ Projects/OpenDAS/Firmware/ShiftRegister595.hpp \
+ C:/Users/gumpa/PCB\ Design\ Projects/OpenDAS/Firmware/ADS127L11/ADS127L11.hpp \
+ C:/Users/gumpa/PCB\ Design\ Projects/OpenDAS/Firmware/HWDefs.h

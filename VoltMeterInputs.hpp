@@ -2,6 +2,7 @@
 #define VOLTMETERINPUTS_HPP
 
 #include "pico/stdlib.h"
+#include "hardware/spi.h"
 
 // Define the configuration struct
 struct VoltMeterInputConfig {

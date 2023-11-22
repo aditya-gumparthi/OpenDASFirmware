@@ -1,61 +1,44 @@
-// AFE.cpp
-#include "AFE.hpp"
+#include "ShiftRegister595.hpp"
 
-AFE::AFE(const AFEConfig& config)
-    : gain_sr(config.spi, config.gain_latch_pin, config.gain_clock_pin, config.gain_data_pin),
-      cal_sr(config.spi, config.cal_latch_pin, config.cal_clock_pin, config.cal_data_pin),
-      gain_sr_state(0) {}
+ShiftRegister595::ShiftRegister595(spi_inst_t *spi, uint latch_pin, uint clock_pin, uint data_pin)
+    : spi_port(spi), gpio_latch(latch_pin), gpio_clock(clock_pin), gpio_data(data_pin)
+{
+    // Initialize SPI
+    spi_init(spi_port, 1000 * 1000); // 1 MHz SPI speed
+    gpio_set_function(gpio_clock, GPIO_FUNC_SPI);
+    gpio_set_function(gpio_data, GPIO_FUNC_SPI);
 
-void AFE::set_fda_gain(fda_gain_t gain) {
-    gain_sr_state &= ~0x0E; // Clear bits 1-3
-    gain_sr_state |= (static_cast<uint8_t>(gain) << 1); // Set new gain
-    gain_sr.send(gain_sr_state);
+    // Initialize latch pin
+    gpio_init(gpio_latch);
+    gpio_set_dir(gpio_latch, GPIO_OUT);
+    gpio_put(gpio_latch, 1); // Start with latch high
+
+    // Initialize shift register with all zeros
+    clear();
 }
 
-void AFE::set_input_gain(input_gain_t gain) {
-    gain_sr_state &= ~0x30; // Clear bits 4-5
-    gain_sr_state |= (static_cast<uint8_t>(gain) << 4); // Set new input gain
-    gain_sr.send(gain_sr_state);
+void ShiftRegister595::startTransmission()
+{
+    asm volatile("nop \n nop \n nop"); // No operation for delay
+    gpio_put(gpio_latch, 0);           // Set latch low before starting transmission
+    asm volatile("nop \n nop \n nop"); // No operation for delay
 }
 
-void AFE::set_attenuation(attenuation_t attenuation) {
-    gain_sr_state &= ~0xC0; // Clear bits 6-7
-    gain_sr_state |= (static_cast<uint8_t>(attenuation) << 6); // Set new attenuation
-    gain_sr.send(gain_sr_state);
+void ShiftRegister595::endTransmission()
+{
+    asm volatile("nop \n nop \n nop"); // No operation for delay
+    gpio_put(gpio_latch, 1);           // Set latch high after transmission
+    asm volatile("nop \n nop \n nop"); // No operation for delay
 }
 
-void AFE::connect_negative_input_buffer_to_inn() {
-    cal_sr_state &= ~0xff; // Clear all the bits
-    cal_sr_state |= 0x40;  // Set the second last bit
-    cal_sr.send(cal_sr_state);
+void ShiftRegister595::send(uint8_t data)
+{
+    startTransmission();
+    spi_write_blocking(spi_port, &data, 1);
+    endTransmission();
 }
 
-void AFE::connect_ref_mid_scale_to_inp() {
-    cal_sr_state &= ~0x03; // Clear the first two bits
-    cal_sr_state |= 0x01;  // Set the first bit
-    cal_sr.send(cal_sr_state);
-}
-
-void AFE::connect_ref_full_scale_to_inp() {
-    cal_sr_state &= ~0x03; // Clear the first two bits
-    cal_sr_state |= 0x02;  // Set the second bit
-    cal_sr.send(cal_sr_state);
-}
-
-void AFE::connect_ref_mid_scale_to_inn() {
-    cal_sr_state &= ~0x0C; // Clear the third and fourth bits
-    cal_sr_state |= 0x08;  // Set the fourth bit
-    cal_sr.send(cal_sr_state);
-}
-
-void AFE::connect_ref_full_scale_to_inn() {
-    cal_sr_state &= ~0x0C; // Clear the third and fourth bits
-    cal_sr_state |= 0x04;  // Set the third bit
-    cal_sr.send(cal_sr_state);
-}
-
-void AFE::short_inn_inp() {
-    cal_sr_state &= ~0xC0; // Clear the last two bits
-    cal_sr_state |= 0x80;  // Set the last bit
-    cal_sr.send(cal_sr_state);
+void ShiftRegister595::clear()
+{
+    send(0x00); // Send a byte of zeros to clear the shift register
 }

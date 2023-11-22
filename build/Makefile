@@ -181,6 +181,54 @@ cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast:
 	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build.make pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build
 .PHONY : cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast
 
+ADS127L11/ADS127L11.obj: ADS127L11/ADS127L11.cpp.obj
+.PHONY : ADS127L11/ADS127L11.obj
+
+# target to build an object file
+ADS127L11/ADS127L11.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opendas_firm.dir/build.make CMakeFiles/opendas_firm.dir/ADS127L11/ADS127L11.cpp.obj
+.PHONY : ADS127L11/ADS127L11.cpp.obj
+
+ADS127L11/ADS127L11.i: ADS127L11/ADS127L11.cpp.i
+.PHONY : ADS127L11/ADS127L11.i
+
+# target to preprocess a source file
+ADS127L11/ADS127L11.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opendas_firm.dir/build.make CMakeFiles/opendas_firm.dir/ADS127L11/ADS127L11.cpp.i
+.PHONY : ADS127L11/ADS127L11.cpp.i
+
+ADS127L11/ADS127L11.s: ADS127L11/ADS127L11.cpp.s
+.PHONY : ADS127L11/ADS127L11.s
+
+# target to generate assembly for a file
+ADS127L11/ADS127L11.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opendas_firm.dir/build.make CMakeFiles/opendas_firm.dir/ADS127L11/ADS127L11.cpp.s
+.PHONY : ADS127L11/ADS127L11.cpp.s
+
+AFE.obj: AFE.cpp.obj
+.PHONY : AFE.obj
+
+# target to build an object file
+AFE.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opendas_firm.dir/build.make CMakeFiles/opendas_firm.dir/AFE.cpp.obj
+.PHONY : AFE.cpp.obj
+
+AFE.i: AFE.cpp.i
+.PHONY : AFE.i
+
+# target to preprocess a source file
+AFE.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opendas_firm.dir/build.make CMakeFiles/opendas_firm.dir/AFE.cpp.i
+.PHONY : AFE.cpp.i
+
+AFE.s: AFE.cpp.s
+.PHONY : AFE.s
+
+# target to generate assembly for a file
+AFE.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opendas_firm.dir/build.make CMakeFiles/opendas_firm.dir/AFE.cpp.s
+.PHONY : AFE.cpp.s
+
 C_/VSARM/PicoSDK/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj: C_/VSARM/PicoSDK/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 .PHONY : C_/VSARM/PicoSDK/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj
 
@@ -1685,6 +1733,30 @@ ShiftRegister595.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opendas_firm.dir/build.make CMakeFiles/opendas_firm.dir/ShiftRegister595.cpp.s
 .PHONY : ShiftRegister595.cpp.s
 
+VoltMeterInputs.obj: VoltMeterInputs.cpp.obj
+.PHONY : VoltMeterInputs.obj
+
+# target to build an object file
+VoltMeterInputs.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opendas_firm.dir/build.make CMakeFiles/opendas_firm.dir/VoltMeterInputs.cpp.obj
+.PHONY : VoltMeterInputs.cpp.obj
+
+VoltMeterInputs.i: VoltMeterInputs.cpp.i
+.PHONY : VoltMeterInputs.i
+
+# target to preprocess a source file
+VoltMeterInputs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opendas_firm.dir/build.make CMakeFiles/opendas_firm.dir/VoltMeterInputs.cpp.i
+.PHONY : VoltMeterInputs.cpp.i
+
+VoltMeterInputs.s: VoltMeterInputs.cpp.s
+.PHONY : VoltMeterInputs.s
+
+# target to generate assembly for a file
+VoltMeterInputs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opendas_firm.dir/build.make CMakeFiles/opendas_firm.dir/VoltMeterInputs.cpp.s
+.PHONY : VoltMeterInputs.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -1722,6 +1794,12 @@ help:
 	@echo "... cyw43_driver_picow_cyw43_bus_pio_spi_pio_h"
 	@echo "... bs2_default"
 	@echo "... opendas_firm"
+	@echo "... ADS127L11/ADS127L11.obj"
+	@echo "... ADS127L11/ADS127L11.i"
+	@echo "... ADS127L11/ADS127L11.s"
+	@echo "... AFE.obj"
+	@echo "... AFE.i"
+	@echo "... AFE.s"
 	@echo "... C_/VSARM/PicoSDK/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj"
 	@echo "... C_/VSARM/PicoSDK/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i"
 	@echo "... C_/VSARM/PicoSDK/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s"
@@ -1910,6 +1988,9 @@ help:
 	@echo "... ShiftRegister595.obj"
 	@echo "... ShiftRegister595.i"
 	@echo "... ShiftRegister595.s"
+	@echo "... VoltMeterInputs.obj"
+	@echo "... VoltMeterInputs.i"
+	@echo "... VoltMeterInputs.s"
 	@echo "... main.obj"
 	@echo "... main.i"
 	@echo "... main.s"

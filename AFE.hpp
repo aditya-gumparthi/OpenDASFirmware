@@ -5,15 +5,13 @@
 #include "ShiftRegister595.hpp"
 #include "hardware/spi.h"
 
-class AFE
-{
+class AFE {
 public:
-    // Define the FDA gain enumeration
-    enum class fda_gain_t
-    {
-        GAIN_DIV_8 = 0, // Previously GAIN_1_8
-        GAIN_DIV_4 = 1, // Previously GAIN_1_4
-        GAIN_DIV_2 = 2, // Previously GAIN_1_2
+    // FDA gain enumeration
+    enum class fda_gain_t {
+        GAIN_DIV_8 = 0,
+        GAIN_DIV_4 = 1,
+        GAIN_DIV_2 = 2,
         GAIN_1 = 3,
         GAIN_2 = 4,
         GAIN_4 = 5,
@@ -21,9 +19,20 @@ public:
         GAIN_16 = 7
     };
 
+    // Input gain enumeration
+    enum class input_gain_t {
+        GAIN_1 = 0b01,
+        GAIN_10 = 0b10
+    };
+
+    // Attenuation enumeration
+    enum class attenuation_t {
+        DIV_1 = 0b01,
+        DIV_10 = 0b10
+    };
+
     // Configuration struct for AFE
-    struct AFEConfig
-    {
+    struct AFEConfig {
         spi_inst_t *spi;
         uint gain_latch_pin;
         uint gain_clock_pin;
@@ -34,15 +43,26 @@ public:
     };
 
     // Constructor
-    AFE(const AFEConfig &config);
+    AFE(const AFEConfig& config);
 
-    // Method to set FDA gain
+    // Set methods for gain_sr
     void set_fda_gain(fda_gain_t gain);
+    void set_input_gain(input_gain_t gain);
+    void set_attenuation(attenuation_t attenuation);
 
-    // Other methods...
+    // Set methods for cal_sr
+    void connect_negative_input_buffer_to_inn();
+    void connect_ref_mid_scale_to_inp();
+    void connect_ref_full_scale_to_inp();
+    void connect_ref_mid_scale_to_inn();
+    void connect_ref_full_scale_to_inn();
+    void short_inn_inp();
+
 private:
     ShiftRegister595 gain_sr;
     ShiftRegister595 cal_sr;
+    uint8_t gain_sr_state; // To maintain the state of gain_sr
+    uint8_t cal_sr_state;  // To maintain the state of cal_sr
 };
 
 #endif // AFE_HPP
