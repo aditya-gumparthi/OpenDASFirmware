@@ -69,4 +69,6 @@ CMakeFiles/opendas_firm.dir/main.cpp.obj: \
  C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
  C:/Users/gumpa/PCB\ Design\ Projects/OpenDAS/Firmware/ShiftRegister595.hpp \
  C:/Users/gumpa/PCB\ Design\ Projects/OpenDAS/Firmware/ADS127L11/ADS127L11.hpp \
- C:/Users/gumpa/PCB\ Design\ Projects/OpenDAS/Firmware/HWDefs.h
+ C:/Users/gumpa/PCB\ Design\ Projects/OpenDAS/Firmware/HWDefs.h \
+ C:/Users/gumpa/PCB\ Design\ Projects/OpenDAS/Firmware/AFE.hpp \
+ C:/Users/gumpa/PCB\ Design\ Projects/OpenDAS/Firmware/VoltMeterInputs.hpp

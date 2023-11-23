@@ -5,10 +5,23 @@
 #include "ADS127L11/ADS127L11.hpp"
 #include "HWDefs.h"
 #include "AFE.hpp"
+#include "VoltMeterInputs.hpp"
 
-ShiftRegister595 hw_cal_sr(spi_default, 25, 2, 3);
-ShiftRegister595 hw_gain_sr(spi_default, 24, 2, 3);
+// ShiftRegister595 hw_cal_sr(spi_default, 25, 2, 3);
+// ShiftRegister595 hw_gain_sr(spi_default, 24, 2, 3);
+VoltMeterInputConfig vm_input_config = {
+    .inn_msel_0 = INN_MUX_SEL_0_PIN,
+    .inn_msel_1 = INN_MUX_SEL_1_PIN,
+    .inn_msel_2 = INN_MUX_SEL_2_PIN,
+    .inn_msel_3 = INN_MUX_SEL_3_PIN,
+    .inp_msel_0 = INP_MUX_SEL_0_PIN,
+    .inp_msel_1 = INP_MUX_SEL_1_PIN,
+    .inp_msel_2 = INP_MUX_SEL_2_PIN,
+    .inp_msel_3 = INP_MUX_SEL_3_PIN,
+    .in_rel_sel = INP_REL_SEL_PIN};
 
+// Create a VoltMeterInputs object
+VoltMeterInputs vm_Inputs(vm_input_config);
 AFE::AFEConfig afe_config = {
     .spi = spi0,                         // SPI instance
     .gain_latch_pin = GAIN_SR_LATCH_PIN, // gain latch pin
@@ -77,9 +90,9 @@ void init_main_adc()
                               .AINN_BUF = false});
 
     // main_adc.set_config3_reg({.delay = 0, .filter = 0b01000}); // 01000b = sinc4, OSR = 12
-    // main_adc.set_config3_reg({.delay = 0, .filter = 0b11100}); //  11100b = sinc3, OSR = 26667
+    main_adc.set_config3_reg({.delay = 0, .filter = 0b11100}); //  11100b = sinc3, OSR = 26667
     // main_adc.set_config3_reg({.delay = 0, .filter = 0b01101}); //  01101b = sinc4, OSR = 128
-    main_adc.set_config3_reg({.delay = 0, .filter = 0b01100}); //  01100b = sinc4, OSR = 64
+    // main_adc.set_config3_reg({.delay = 0, .filter = 0b01100}); //  01100b = sinc4, OSR = 64
 
     main_adc.set_config4_reg({.CLK_SEL = 0,
                               .CLK_DIV = 0,
@@ -97,7 +110,23 @@ void init_main_adc()
 
 void init_voltmeter()
 {
+    //     hw_gain_sr.send(0xff);
+    //     hw_cal_sr.send(0xff);
+    sleep_ms(1000);
+
     init_main_adc();
+    vm_AFE.set_fda_gain(AFE::fda_gain_t::GAIN_1);
+    sleep_ms(1000);
+    // vm_AFE.short_inn_inp();
+    vm_AFE.connect_ref_mid_scale_to_inp();
+    sleep_ms(100);
+
+    vm_AFE.connect_negative_input_buffer_to_inn();
+    sleep_ms(100);
+
+    vm_Inputs.setInn(VoltMeterInputs::InputSelection::INPUT_VIN);
+
+    sleep_ms(100);
     init_start_adc_conv_pin_interrupt();
 }
 
@@ -112,10 +141,14 @@ void main_adc_read_callback(uint gpio, uint32_t events)
 int main()
 {
     stdio_init_all();
+    // sleep_ms(1000);
+    gpio_set_function(SPI0_CLK_PIN, GPIO_FUNC_SPI);
+    gpio_set_function(SPI0_MOSI_PIN, GPIO_FUNC_SPI);
+    gpio_set_function(SPI0_MISO_PIN, GPIO_FUNC_SPI);
+
     spi_init(spi_default, 1000e3);
-    gpio_set_function(0, GPIO_FUNC_SPI);
-    // gpio_set_function(2, GPIO_FUNC_SPI);
-    // gpio_set_function(3, GPIO_FUNC_SPI);
+    // gpio_set_function(0, GPIO_FUNC_SPI);
+    init_voltmeter();
 
     // gpio_init(25);
     // gpio_init(24);

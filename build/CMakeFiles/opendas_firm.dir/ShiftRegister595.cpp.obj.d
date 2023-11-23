@@ -57,6 +57,14 @@ CMakeFiles/opendas_firm.dir/ShiftRegister595.cpp.obj: \
  C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
  C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
  C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
+ c:\vsarm\armcc\12.2\ mpacbti-rel1\arm-none-eabi\include\stdio.h \
+ c:\vsarm\armcc\12.2\ mpacbti-rel1\lib\gcc\arm-none-eabi\12.2.1\include\stdarg.h \
+ c:\vsarm\armcc\12.2\ mpacbti-rel1\arm-none-eabi\include\sys\reent.h \
+ c:\vsarm\armcc\12.2\ mpacbti-rel1\arm-none-eabi\include\_ansi.h \
+ c:\vsarm\armcc\12.2\ mpacbti-rel1\arm-none-eabi\include\sys\_types.h \
+ c:\vsarm\armcc\12.2\ mpacbti-rel1\arm-none-eabi\include\machine\_types.h \
+ c:\vsarm\armcc\12.2\ mpacbti-rel1\arm-none-eabi\include\sys\lock.h \
+ c:\vsarm\armcc\12.2\ mpacbti-rel1\arm-none-eabi\include\sys\stdio.h \
  C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h \
  C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
  C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/spi.h

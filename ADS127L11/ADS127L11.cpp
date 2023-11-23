@@ -35,7 +35,7 @@ void ADS127L11::init()
     hw_reset(); // Hardware reset
 
     // Initialize SPI
-    spi_init(spi_hw, 20000000); // Initialize SPI0 at 20 MHz
+    spi_init(spi_hw, 20e6); // Initialize SPI0 at 20 MHz
 }
 void ADS127L11::select_chip()
 {
@@ -44,8 +44,8 @@ void ADS127L11::select_chip()
 } // Set CS pin LOW
 void ADS127L11::deselect_chip()
 {
-    gpio_put(cs_pin, 1);               // Set CS pin high
     asm volatile("nop \n nop \n nop"); // No operation for delay
+    gpio_put(cs_pin, 1); // Set CS pin high
 }
 
 void ADS127L11::hw_reset()
