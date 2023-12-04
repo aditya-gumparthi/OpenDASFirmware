@@ -55,48 +55,6 @@ int findTriggerIndex(const ppBuf<T, N> &data, float trigger_level, SignalType si
     return -1; // Return -1 if no trigger is found
 }
 
-template <typename T, const size_t N>
-void printTriggerData(ppBuf<T, N> &buffer, float trigger_level, SignalType signal, size_t before_n, size_t after_n)
-{
-    static size_t lastProcessedIteration = 0;
-
-    // Check if the buffer is fresh
-    if (buffer.iteration_counter == lastProcessedIteration)
-    {
-        return; // Buffer already processed
-    }
-
-    // Update the last processed iteration
-    lastProcessedIteration = buffer.iteration_counter;
-
-    int triggerIndex = findTriggerIndex(buffer, trigger_level, signal);
-    if (triggerIndex != -1)
-    {
-        // Ensure there is enough space after the trigger
-        if (triggerIndex + after_n >= N)
-        {
-            printf("Trigger ignored due to insufficient space after trigger index.\n");
-            return;
-        }
-
-        // Calculate start and end indices for printing
-        size_t start = triggerIndex > before_n ? triggerIndex - before_n : 0;
-        size_t end = triggerIndex + after_n;
-
-        // Print values before and after the trigger
-        printf("Trigger found at index: %d\n", triggerIndex);
-        printf("Values around trigger:\n");
-        for (size_t i = start; i <= end; ++i)
-        {
-            printf("%f ", buffer.read_active_buf(i));
-        }
-        printf("\n");
-    }
-    else
-    {
-        printf("No trigger found.\n");
-    }
-}
 
 // int main() {
 //     const size_t bufferSize = 10;

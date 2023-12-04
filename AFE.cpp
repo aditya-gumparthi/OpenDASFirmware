@@ -16,15 +16,16 @@ void AFE::set_fda_gain(fda_gain_t gain)
 
 void AFE::set_input_gain(input_gain_t gain)
 {
-    gain_sr_state &= ~0x30;                             // Clear bits 4-5
-    gain_sr_state |= (static_cast<uint8_t>(gain) << 4); // Set new input gain
+    gain_sr_state &= ~0xC0;                             // Clear bits 6-7
+    gain_sr_state |= (static_cast<uint8_t>(gain) << 6); // Set new attenuation
     gain_sr.send(gain_sr_state);
 }
 
 void AFE::set_attenuation(attenuation_t attenuation)
 {
-    gain_sr_state &= ~0xC0;                                    // Clear bits 6-7
-    gain_sr_state |= (static_cast<uint8_t>(attenuation) << 6); // Set new attenuation
+
+    gain_sr_state &= ~0x30;                                    // Clear bits 4-5
+    gain_sr_state |= (static_cast<uint8_t>(attenuation) << 4); // Set new input gain
     gain_sr.send(gain_sr_state);
 }
 

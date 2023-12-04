@@ -6,9 +6,68 @@
 #include "HWDefs.h"
 #include "AFE.hpp"
 #include "VoltMeterInputs.hpp"
-
+#include "ppBuf.hpp"
+#include "trigger.hpp"
 // ShiftRegister595 hw_cal_sr(spi_default, 25, 2, 3);
 // ShiftRegister595 hw_gain_sr(spi_default, 24, 2, 3);
+
+int64_t _adc_isr_process_time_us = 1;
+int64_t _adc_isr_callback_time_us = 1;
+int64_t _trigger_frame_print_process_time_us = 1;
+int64_t _trigger_frame_print_callback_time_us = 1;
+
+float _gain_of_afe = 1;
+ppBuf<float, 1024u> pp_adc_data_buf;
+template <typename T, const size_t N>
+void printTriggerData(ppBuf<T, N> &buffer, float trigger_level, SignalType signal, size_t before_n, size_t after_n)
+{
+    static uint64_t entry_time = time_us_64();
+    static uint64_t exit_time;
+    _trigger_frame_print_callback_time_us = entry_time - exit_time;
+
+    static size_t lastProcessedIteration = 0;
+
+    // Check if the buffer is fresh
+    if (buffer.iteration_counter == lastProcessedIteration)
+    {
+        return; // Buffer already processed
+    }
+
+    // Update the last processed iteration
+    lastProcessedIteration = buffer.iteration_counter;
+
+    int triggerIndex = findTriggerIndex(buffer, trigger_level, signal);
+    if (triggerIndex != -1)
+    {
+        // Ensure there is enough space after the trigger
+        if (triggerIndex + after_n >= N)
+        {
+            printf("Trigger ignored due to insufficient space after trigger index.\n");
+            return;
+        }
+
+        // Calculate start and end indices for printing
+        size_t start = triggerIndex > before_n ? triggerIndex - before_n : 0;
+        size_t end = triggerIndex + after_n;
+
+        // Print values before and after the trigger
+        printf("Trigger found at index: %d\n", triggerIndex);
+        printf("<TFrame [%i] tsmpl_us=%i>", (end - start), (_adc_isr_callback_time_us));
+        for (size_t i = start; i <= end; ++i)
+        {
+            printf("%f, ", buffer.read_active_buf(i));
+        }
+        printf("\n");
+
+        exit_time = time_us_64();
+        _trigger_frame_print_process_time_us = exit_time - entry_time;
+        printf("Trigger print took: %i us\n", _trigger_frame_print_process_time_us);
+    }
+    {
+        printf("No trigger found.\n");
+    }
+}
+
 VoltMeterInputConfig vm_input_config = {
     .inn_msel_0 = INN_MUX_SEL_0_PIN,
     .inn_msel_1 = INN_MUX_SEL_1_PIN,
@@ -115,27 +174,44 @@ void init_voltmeter()
     sleep_ms(1000);
 
     init_main_adc();
-    vm_AFE.set_fda_gain(AFE::fda_gain_t::GAIN_1);
+    _gain_of_afe = 1.0f / 8.0f;
+    vm_AFE.set_fda_gain(AFE::fda_gain_t::GAIN_DIV_8);
     sleep_ms(1000);
     // vm_AFE.short_inn_inp();
-    vm_AFE.connect_ref_mid_scale_to_inp();
+    vm_AFE.set_input_gain(AFE::input_gain_t::GAIN_1);
+    sleep_ms(100);
+
+    vm_AFE.set_attenuation(AFE::attenuation_t::DIV_1);
     sleep_ms(100);
 
     vm_AFE.connect_negative_input_buffer_to_inn();
     sleep_ms(100);
 
     vm_Inputs.setInn(VoltMeterInputs::InputSelection::INPUT_VIN);
-
     sleep_ms(100);
+    vm_Inputs.setInp(VoltMeterInputs::InputSelection::INPUT_VIN);
+    sleep_ms(100);
+    vm_Inputs.setInputAttenuation(VoltMeterInputs::InputAttenuation::DIV_1);
+    sleep_ms(100);
+
     init_start_adc_conv_pin_interrupt();
 }
 
 void main_adc_read_callback(uint gpio, uint32_t events)
 {
+    static uint64_t entry_time = time_us_64();
+    static uint64_t exit_time;
+    _adc_isr_callback_time_us = entry_time - exit_time;
+
     ADS127L11::conv_data_t d = main_adc.get_conv_data();
+    d.v = (d.v / _gain_of_afe);
+    pp_adc_data_buf.append(d.v);
     // main_adc.bin_conv(d);
-    printf("EVNT=%u CB=%u v= %f b= 0x%x SR: 0x%x\n",
-           events, gpio, d.v, d.data, d.status_reg);
+    //     printf("EVNT=%u CB=%u v= %f b= 0x%x SR: 0x%x\n",
+    //            events, gpio, d.v, d.data, d.status_reg);
+
+    exit_time = time_us_64();
+    _adc_isr_process_time_us = exit_time - entry_time;
 }
 
 int main()
@@ -168,8 +244,9 @@ int main()
 
     while (1)
     {
-        printf("Hello, world!\n");
-        sleep_ms(1000);
+        printTriggerData(pp_adc_data_buf, 0.005f, SignalType::RISING, 32u, 256u);
+        // printf("Hello, world!\n");
+        // sleep_ms(1000);
     }
     return 0;
 }

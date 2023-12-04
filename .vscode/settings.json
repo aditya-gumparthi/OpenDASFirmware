@@ -3,6 +3,15 @@
         "cstdint": "cpp",
         "array": "cpp",
         "string": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "charconv": "cpp",
+        "cmath": "cpp",
+        "limits": "cpp",
+        "optional": "cpp",
+        "system_error": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp"
     }
 }

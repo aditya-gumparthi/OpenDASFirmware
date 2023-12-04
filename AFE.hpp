@@ -5,10 +5,12 @@
 #include "ShiftRegister595.hpp"
 #include "hardware/spi.h"
 
-class AFE {
+class AFE
+{
 public:
     // FDA gain enumeration
-    enum class fda_gain_t {
+    enum class fda_gain_t
+    {
         GAIN_DIV_8 = 0,
         GAIN_DIV_4 = 1,
         GAIN_DIV_2 = 2,
@@ -20,19 +22,23 @@ public:
     };
 
     // Input gain enumeration
-    enum class input_gain_t {
-        GAIN_1 = 0b01,
-        GAIN_10 = 0b10
+    enum class input_gain_t
+    {
+        GAIN_1 = 0b10,
+        GAIN_10 = 0b01
     };
 
     // Attenuation enumeration
-    enum class attenuation_t {
+    enum class attenuation_t
+    {
         DIV_1 = 0b01,
-        DIV_10 = 0b10
+        DIV_10 = 0b10,
+        OPEN = 0b00
     };
 
     // Configuration struct for AFE
-    struct AFEConfig {
+    struct AFEConfig
+    {
         spi_inst_t *spi;
         uint gain_latch_pin;
         uint gain_clock_pin;
@@ -43,7 +49,7 @@ public:
     };
 
     // Constructor
-    AFE(const AFEConfig& config);
+    AFE(const AFEConfig &config);
 
     // Set methods for gain_sr
     void set_fda_gain(fda_gain_t gain);
