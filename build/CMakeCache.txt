@@ -49,11 +49,8 @@ CMAKE_ASM_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 //No help, variable specified on the command line.
 CMAKE_BUILD_TYPE:STRING=Debug
 
-//Enable/Disable color output during build.
-CMAKE_COLOR_MAKEFILE:BOOL=ON
-
-//No help, variable specified on the command line.
-CMAKE_CXX_COMPILER:FILEPATH=C:/VSARM/armcc/12.2 mpacbti-rel1/bin/arm-none-eabi-g++.exe
+//CXX compiler
+CMAKE_CXX_COMPILER:STRING=C:/VSARM/armcc/12.2 mpacbti-rel1/bin/arm-none-eabi-g++.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -78,8 +75,8 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
-//No help, variable specified on the command line.
-CMAKE_C_COMPILER:FILEPATH=C:/VSARM/armcc/12.2 mpacbti-rel1/bin/arm-none-eabi-gcc.exe
+//C compiler
+CMAKE_C_COMPILER:STRING=C:/VSARM/armcc/12.2 mpacbti-rel1/bin/arm-none-eabi-gcc.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -128,61 +125,14 @@ CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/CMakeFiles/pkgRedirects
 
-//User executables (bin)
-CMAKE_INSTALL_BINDIR:PATH=bin
-
-//Read-only architecture-independent data (DATAROOTDIR)
-CMAKE_INSTALL_DATADIR:PATH=
-
-//Read-only architecture-independent data root (share)
-CMAKE_INSTALL_DATAROOTDIR:PATH=share
-
-//Documentation root (DATAROOTDIR/doc/PROJECT_NAME)
-CMAKE_INSTALL_DOCDIR:PATH=
-
-//C header files (include)
-CMAKE_INSTALL_INCLUDEDIR:PATH=include
-
-//Info documentation (DATAROOTDIR/info)
-CMAKE_INSTALL_INFODIR:PATH=
-
-CMAKE_INSTALL_LIBDIR:PATH=lib
-
-//Program executables (libexec)
-CMAKE_INSTALL_LIBEXECDIR:PATH=libexec
-
-//Locale-dependent data (DATAROOTDIR/locale)
-CMAKE_INSTALL_LOCALEDIR:PATH=
-
-//Modifiable single-machine data (var)
-CMAKE_INSTALL_LOCALSTATEDIR:PATH=var
-
-//Man documentation (DATAROOTDIR/man)
-CMAKE_INSTALL_MANDIR:PATH=
-
-//C header files for non-gcc (/usr/include)
-CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
-
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/opendas_firm
-
-//Run-time variable data (LOCALSTATEDIR/run)
-CMAKE_INSTALL_RUNSTATEDIR:PATH=
-
-//System admin executables (sbin)
-CMAKE_INSTALL_SBINDIR:PATH=sbin
-
-//Modifiable architecture-independent data (com)
-CMAKE_INSTALL_SHAREDSTATEDIR:PATH=com
-
-//Read-only single-machine data (etc)
-CMAKE_INSTALL_SYSCONFDIR:PATH=etc
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/opendas_firmware
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=C:/VSARM/armcc/12.2 mpacbti-rel1/bin/arm-none-eabi-ld.exe
 
-//Path to a program.
-CMAKE_MAKE_PROGRAM:FILEPATH=C:/VSARM/mingw/usr/bin/make.exe
+//Program used to build from build.ninja files.
+CMAKE_MAKE_PROGRAM:FILEPATH=C:/VSARM/mingw/mingw64/bin/ninja.exe
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -218,22 +168,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=opendas_firm
-
-//Value Computed by CMake
-CMAKE_PROJECT_VERSION:STATIC=0.2.0
-
-//Value Computed by CMake
-CMAKE_PROJECT_VERSION_MAJOR:STATIC=0
-
-//Value Computed by CMake
-CMAKE_PROJECT_VERSION_MINOR:STATIC=2
-
-//Value Computed by CMake
-CMAKE_PROJECT_VERSION_PATCH:STATIC=0
-
-//Value Computed by CMake
-CMAKE_PROJECT_VERSION_TWEAK:STATIC=
+CMAKE_PROJECT_NAME:STATIC=opendas_firmware
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=C:/VSARM/armcc/12.2 mpacbti-rel1/bin/arm-none-eabi-ranlib.exe
@@ -316,18 +251,8 @@ FETCHCONTENT_FULLY_DISCONNECTED:BOOL=OFF
 //Enables QUIET option for all content population
 FETCHCONTENT_QUIET:BOOL=ON
 
-//When not empty, overrides where to find pre-populated content
-// for emio
-FETCHCONTENT_SOURCE_DIR_EMIO:PATH=
-
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
-
-//Enables UPDATE_DISCONNECTED behavior just for population of emio
-FETCHCONTENT_UPDATES_DISCONNECTED_EMIO:BOOL=OFF
-
-//Git command line client
-GIT_EXECUTABLE:FILEPATH=C:/Program Files/Git/cmd/git.exe
 
 //PICO target board (e.g. pico)
 PICO_BOARD:STRING=pico
@@ -384,28 +309,13 @@ PICO_STDIO_UART:BOOL=ON
 PICO_STDIO_USB:BOOL=OFF
 
 //Value Computed by CMake
-emio_BINARY_DIR:STATIC=C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/_deps/emio-build
-
-//Use SYSTEM modifier for emio's includes, disabling warnings
-emio_INCLUDES_WITH_SYSTEM:BOOL=ON
-
-//CMake package config location relative to the install prefix
-emio_INSTALL_CMAKEDIR:PATH=share/emio
+opendas_firmware_BINARY_DIR:STATIC=C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build
 
 //Value Computed by CMake
-emio_IS_TOP_LEVEL:STATIC=OFF
+opendas_firmware_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-emio_SOURCE_DIR:STATIC=C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/_deps/emio-src
-
-//Value Computed by CMake
-opendas_firm_BINARY_DIR:STATIC=C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build
-
-//Value Computed by CMake
-opendas_firm_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-opendas_firm_SOURCE_DIR:STATIC=C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware
+opendas_firmware_SOURCE_DIR:STATIC=C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware
 
 //The directory containing a CMake configuration file for pico-sdk-tools.
 pico-sdk-tools_DIR:PATH=C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk-tools
@@ -453,8 +363,6 @@ CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 CMAKE_CACHE_MINOR_VERSION:INTERNAL=26
 //Patch version of cmake used to create the current loaded cache
 CMAKE_CACHE_PATCH_VERSION:INTERNAL=4
-//ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
-CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
 CMAKE_COMMAND:INTERNAL=C:/Program Files/CMake/bin/cmake.exe
 //Path to cpack program executable.
@@ -512,7 +420,7 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //Name of external makefile project generator.
 CMAKE_EXTRA_GENERATOR:INTERNAL=
 //Name of generator.
-CMAKE_GENERATOR:INTERNAL=Unix Makefiles
+CMAKE_GENERATOR:INTERNAL=Ninja
 //Generator instance identifier.
 CMAKE_GENERATOR_INSTANCE:INTERNAL=
 //Name of generator platform.
@@ -522,38 +430,6 @@ CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware
-//ADVANCED property for variable: CMAKE_INSTALL_BINDIR
-CMAKE_INSTALL_BINDIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_INSTALL_DATADIR
-CMAKE_INSTALL_DATADIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_INSTALL_DATAROOTDIR
-CMAKE_INSTALL_DATAROOTDIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_INSTALL_DOCDIR
-CMAKE_INSTALL_DOCDIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_INSTALL_INCLUDEDIR
-CMAKE_INSTALL_INCLUDEDIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_INSTALL_INFODIR
-CMAKE_INSTALL_INFODIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_INSTALL_LIBDIR
-CMAKE_INSTALL_LIBDIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_INSTALL_LIBEXECDIR
-CMAKE_INSTALL_LIBEXECDIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_INSTALL_LOCALEDIR
-CMAKE_INSTALL_LOCALEDIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_INSTALL_LOCALSTATEDIR
-CMAKE_INSTALL_LOCALSTATEDIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_INSTALL_MANDIR
-CMAKE_INSTALL_MANDIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_INSTALL_OLDINCLUDEDIR
-CMAKE_INSTALL_OLDINCLUDEDIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_INSTALL_RUNSTATEDIR
-CMAKE_INSTALL_RUNSTATEDIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_INSTALL_SBINDIR
-CMAKE_INSTALL_SBINDIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_INSTALL_SHAREDSTATEDIR
-CMAKE_INSTALL_SHAREDSTATEDIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_INSTALL_SYSCONFDIR
-CMAKE_INSTALL_SYSCONFDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
 CMAKE_LINKER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MAKE_PROGRAM
@@ -619,13 +495,11 @@ DOXYGEN_EXECUTABLE-ADVANCED:INTERNAL=1
 FAMILY_MCUS:INTERNAL=RP2040
 //Details about finding Python3
 FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[C:/Program Files/Python311/python.exe][cfound components: Interpreter ][v3.11.3()]
-//ADVANCED property for variable: GIT_EXECUTABLE
-GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 PICO_BOOT_STAGE2_DIR:INTERNAL=C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/boot_stage2
 PICO_CMAKE_PRELOAD_PLATFORM_DIR:INTERNAL=C:/VSARM/PicoSDK/pico-sdk/cmake/preload/platforms
 PICO_CMAKE_PRELOAD_PLATFORM_FILE:INTERNAL=C:/VSARM/PicoSDK/pico-sdk/cmake/preload/platforms/rp2040.cmake
 PICO_COMPILER_ASM:INTERNAL=C:/VSARM/armcc/12.2 mpacbti-rel1/bin/arm-none-eabi-gcc.exe
-PICO_DOXYGEN_EXCLUDE_PATHS:INTERNAL= C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs
+PICO_DOXYGEN_EXCLUDE_PATHS:INTERNAL= C:/VSARM/PicoSDK/pico-sdk/src/rp2_common/cmsis C:/VSARM/PicoSDK/pico-sdk/src/rp2040/hardware_regs
 PICO_DOXYGEN_PATHS:INTERNAL= C:/VSARM/PicoSDK/pico-sdk/src/common C:/VSARM/PicoSDK/pico-sdk/lib/cyw43-driver/src C:/VSARM/PicoSDK/pico-sdk/src/rp2_common C:/VSARM/PicoSDK/pico-sdk/src/rp2040
 PICO_NO_HARDWARE:INTERNAL=0
 PICO_ON_DEVICE:INTERNAL=1
@@ -633,8 +507,6 @@ PICO_PLATFORM_CMAKE_FILE:INTERNAL=C:/VSARM/PicoSDK/pico-sdk/src/rp2040.cmake
 //Enable build of SDK tests
 PICO_SDK_TESTS_ENABLED:INTERNAL=
 PICO_TOOLCHAIN_PATH:INTERNAL=
-//CMAKE_INSTALL_PREFIX during last run
-_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/opendas_firm
 //Compiler reason failure
 _Python3_Compiler_REASON_FAILURE:INTERNAL=
 //Development reason failure
@@ -644,12 +516,6 @@ _Python3_EXECUTABLE:INTERNAL=C:/Program Files/Python311/python.exe
 //Python3 Properties
 _Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;11;3;32;;;abi3;C:\Program Files\Python311\Lib;C:\Program Files\Python311\Lib;C:\Program Files\Python311\Lib\site-packages;C:\Program Files\Python311\Lib\site-packages
 _Python3_INTERPRETER_SIGNATURE:INTERNAL=3f191c1f0b8c8aaad139b6ee23d787c1
-//Interpreter reason failure
-_Python3_Interpreter_REASON_FAILURE:INTERNAL=
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
-//ADVANCED property for variable: emio_INCLUDES_WITH_SYSTEM
-emio_INCLUDES_WITH_SYSTEM-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: emio_INSTALL_CMAKEDIR
-emio_INSTALL_CMAKEDIR-ADVANCED:INTERNAL=1
 

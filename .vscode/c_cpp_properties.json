@@ -4,7 +4,7 @@
             "name": "Win32",
             "includePath": [
                 "${default}",
-                "C:\\VSARM\\PicoSDK\\pico-sdk"
+                "C:\\VSARM\\PicoSDK\\pico-sdk\\**"
             ],
             "defines": [
                 "_DEBUG",

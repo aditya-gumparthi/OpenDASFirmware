@@ -1,4 +1,4 @@
-C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/CMakeFiles/opendas_firm.dir
+C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/CMakeFiles/opendas_firmware.dir
 C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/CMakeFiles/edit_cache.dir
 C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/CMakeFiles/rebuild_cache.dir
 C:/Users/gumpa/PCB Design Projects/OpenDAS/Firmware/build/pico-sdk/CMakeFiles/edit_cache.dir

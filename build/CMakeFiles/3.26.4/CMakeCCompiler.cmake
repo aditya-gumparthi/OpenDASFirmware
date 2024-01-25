@@ -68,5 +68,5 @@ endif()
 
 set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/VSARM/armcc/12.2 mpacbti-rel1/lib/gcc/arm-none-eabi/12.2.1/include;C:/VSARM/armcc/12.2 mpacbti-rel1/lib/gcc/arm-none-eabi/12.2.1/include-fixed;C:/VSARM/armcc/12.2 mpacbti-rel1/arm-none-eabi/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "C:/VSARM/armcc/12.2 mpacbti-rel1/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp;C:/VSARM/armcc/12.2 mpacbti-rel1/arm-none-eabi/lib/thumb/v6-m/nofp;C:/VSARM/armcc/12.2 mpacbti-rel1/lib/gcc/arm-none-eabi/12.2.1;C:/VSARM/armcc/12.2 mpacbti-rel1/lib/gcc;C:/VSARM/armcc/12.2 mpacbti-rel1/arm-none-eabi/lib")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")
