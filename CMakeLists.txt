@@ -8,6 +8,9 @@ set(PICO_SDK_FETCH_FROM_GIT on)
 # note: this must happen before project()
 include(pico_sdk_import.cmake)
 
+set(SRC_DIRECTORY "${CMAKE_SOURCE_DIR}/src")
+set(FREERTOS_SRC_DIRECTORY "${SRC_DIRECTORY}/FreeRTOS/FreeRTOS/Source")
+
 
 # FetchContent_Declare(
 #         emio
@@ -25,15 +28,37 @@ project(opendas_firmware)
 pico_sdk_init()
 # set(HEADER_FILES ShiftRegister595.hpp)
 
-add_executable(opendas_firmware
-    main.cpp
-    Cli.cpp
-    ShiftRegister595.cpp
-    VoltMeterInputs.cpp
-    AFE.cpp
-    ADS127L11/ADS127L11.cpp
 
-    # ${HEADER_FILES}
+# Add FreeRTOS as a library
+add_library(FreeRTOS STATIC
+    ${FREERTOS_SRC_DIRECTORY}/event_groups.c
+    ${FREERTOS_SRC_DIRECTORY}/list.c
+    ${FREERTOS_SRC_DIRECTORY}/queue.c
+    ${FREERTOS_SRC_DIRECTORY}/stream_buffer.c
+    ${FREERTOS_SRC_DIRECTORY}/tasks.c
+    ${FREERTOS_SRC_DIRECTORY}/timers.c
+    ${FREERTOS_SRC_DIRECTORY}/portable/MemMang/heap_3.c
+    ${FREERTOS_SRC_DIRECTORY}/portable/GCC/ARM_CM0/port.c
+)
+
+
+# Build FreeRTOS
+target_include_directories(FreeRTOS PUBLIC
+    ${SRC_DIRECTORY}/FreeRTOS_Config/
+    ${FREERTOS_SRC_DIRECTORY}/include
+    ${FREERTOS_SRC_DIRECTORY}/portable/GCC/ARM_CM0
+)
+
+
+
+add_executable(opendas_firmware
+    ${SRC_DIRECTORY}/main.cpp
+    ${SRC_DIRECTORY}/Cli.cpp
+    ${SRC_DIRECTORY}/ShiftRegister595.cpp
+    ${SRC_DIRECTORY}/VoltMeterInputs.cpp
+    ${SRC_DIRECTORY}/AFE.cpp
+    ${SRC_DIRECTORY}/ADS127L11/ADS127L11.cpp
+    
 )
 pico_enable_stdio_usb(opendas_firmware 1)
 pico_enable_stdio_uart(opendas_firmware 0)

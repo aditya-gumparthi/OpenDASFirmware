@@ -26,7 +26,7 @@ int main()
         // print_info("Hello, world!\n");
 
         cli_read_and_process();
-        sleep_ms(1);
+        sleep_ms(5000);
     }
 
     return 0;
