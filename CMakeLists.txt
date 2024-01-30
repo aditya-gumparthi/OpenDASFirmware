@@ -37,7 +37,7 @@ add_library(FreeRTOS STATIC
     ${FREERTOS_SRC_DIRECTORY}/stream_buffer.c
     ${FREERTOS_SRC_DIRECTORY}/tasks.c
     ${FREERTOS_SRC_DIRECTORY}/timers.c
-    ${FREERTOS_SRC_DIRECTORY}/portable/MemMang/heap_3.c
+    #${FREERTOS_SRC_DIRECTORY}/portable/MemMang/heap_3.c
     ${FREERTOS_SRC_DIRECTORY}/portable/GCC/ARM_CM0/port.c
 )
 
@@ -64,7 +64,7 @@ pico_enable_stdio_usb(opendas_firmware 1)
 pico_enable_stdio_uart(opendas_firmware 0)
 
 # Add pico_stdlib library which aggregates commonly used features
-target_link_libraries(opendas_firmware pico_stdlib hardware_spi)
+target_link_libraries(opendas_firmware pico_stdlib hardware_spi FreeRTOS)
 
 
 

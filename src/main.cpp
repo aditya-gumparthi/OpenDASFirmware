@@ -3,6 +3,8 @@
 #include "Cli.hpp"
 #include "PrintMacros/printMacros.h"
 #include "ShiftRegister595.hpp"
+#include "FreeRTOS.h"
+#include "task.h"
 #include <hardware/spi.h>
 
 ShiftRegister595 hw_cal_sr(spi0, 25, 2, 3);
@@ -30,4 +32,17 @@ int main()
     }
 
     return 0;
+}
+
+void vApplicationStackOverflowHook( TaskHandle_t pxTask, char *pcTaskName )
+{
+	( void ) pcTaskName;
+	( void ) pxTask;
+
+	/* Run time stack overflow checking is performed if
+	configCHECK_FOR_STACK_OVERFLOW is defined to 1 or 2.  This hook
+	function is called if a stack overflow is detected.  This function is
+	provided as an example only as stack overflow checking does not function
+	when running the FreeRTOS Windows port. */
+	print_error("stack overfolw on, line: %s, task: %s ", __LINE__, pcTaskName );
 }
