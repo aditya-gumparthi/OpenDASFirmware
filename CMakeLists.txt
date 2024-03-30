@@ -57,6 +57,7 @@ add_executable(opendas_firmware
     ${SRC_DIRECTORY}/ShiftRegister595.cpp
     ${SRC_DIRECTORY}/VoltMeterInputs.cpp
     ${SRC_DIRECTORY}/AFE.cpp
+    ${SRC_DIRECTORY}/VmHwInit.cpp
     ${SRC_DIRECTORY}/ADS127L11/ADS127L11.cpp
     
 )
@@ -64,7 +65,7 @@ pico_enable_stdio_usb(opendas_firmware 1)
 pico_enable_stdio_uart(opendas_firmware 0)
 
 # Add pico_stdlib library which aggregates commonly used features
-target_link_libraries(opendas_firmware pico_stdlib hardware_spi FreeRTOS)
+target_link_libraries(opendas_firmware pico_stdlib hardware_spi FreeRTOS pico_multicore)
 
 
 
